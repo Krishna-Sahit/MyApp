@@ -1,6 +1,6 @@
 namespace MyApp.API.Models
 {
-    public class Value
+    public class Player
     {
         public int ID { get; set; }
 

@@ -12,19 +12,20 @@ namespace MyApp.API.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class PlayersController : ControllerBase
     {
         private readonly Datacontext _context;
-        public ValuesController(Datacontext context)
+        public PlayersController(Datacontext context)
         {
             _context = context;
             
         }
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
-            var values = await _context.Values.ToListAsync();
+            var values = await _context.Players.ToListAsync();
             return Ok(values);
         }
 
@@ -33,7 +34,7 @@ namespace MyApp.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
-            var values =  await _context.Values.FirstOrDefaultAsync(x => x.ID == id);
+            var values =  await _context.Players.FirstOrDefaultAsync(x => x.ID == id);
             return Ok(values);
         }
 
