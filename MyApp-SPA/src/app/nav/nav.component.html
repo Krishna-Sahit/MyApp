@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">Basketball App</a>
+    <a class="navbar-brand" [routerLink]="['/home']"   href="#">Basketball App</a>
 
     <ul  *ngIf="loggedIn()" class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Friends </a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link"  [routerLink]="['/friends']" href="#">Friends</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Favorites</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/favorites']" href="#">Favorites</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Chat</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/chat']" href="#">Chat</a>
       </li>
     </ul>
 
