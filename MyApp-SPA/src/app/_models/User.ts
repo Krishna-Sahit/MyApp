@@ -11,8 +11,8 @@ export interface User {
     photoUrl: string;
     city: string;
     country: string;
-    favoriteTeam?: string;
-    favoritePlayers?: string;
-    introduction?: string;
+    favoriteTeam: string;
+    favoritePlayers: string;
+    introduction: string;
     photos?: Photo[];
 }

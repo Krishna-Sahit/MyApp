@@ -7,7 +7,7 @@ import { User } from 'src/app/_models/User';
   styleUrls: ['./Friends-card.component.scss']
 })
 export class FriendsCardComponent implements OnInit {
-  @Input() user : User;
+  @Input() user: User;
   
   constructor() { }
 

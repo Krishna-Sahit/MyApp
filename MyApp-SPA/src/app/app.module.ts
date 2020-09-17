@@ -23,6 +23,9 @@ import { FriendDetailedComponent } from './Friends/Friends-List/Friend-detailed/
 import { FriendDetailedResolver } from './_resolver/friend-detail-resolver';
 import { FriendListResolver } from './_resolver/friends-list-resolver';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { MemberEditComponent } from './Friends/Friends-List/Member-edit/Member-edit.component';
+import { MemberEditResolver } from './_resolver/member-edit-resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsavedchanges.guard';
 
 
 // tslint:disable-next-line: typedef
@@ -42,7 +45,8 @@ export function tokenGetter() {
     ChatComponent,
     FavoritesComponent,
     FriendsCardComponent,
-    FriendDetailedComponent
+    FriendDetailedComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ export function tokenGetter() {
     AuthService,
     ErrorInterceptorProvider,
     FriendDetailedResolver,
-    FriendListResolver
+    FriendListResolver,
+    MemberEditResolver,
+    PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]
 })
