@@ -20,7 +20,7 @@ namespace MyApp.API.Controllers
             _context = context;
             
         }
-        // GET api/values
+        // GET api/players
         [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()

@@ -26,6 +26,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { MemberEditComponent } from './Friends/Friends-List/Member-edit/Member-edit.component';
 import { MemberEditResolver } from './_resolver/member-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsavedchanges.guard';
+import { PhotoEditorComponent } from './Friends/Friends-List/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 // tslint:disable-next-line: typedef
@@ -46,7 +48,8 @@ export function tokenGetter() {
     FavoritesComponent,
     FriendsCardComponent,
     FriendDetailedComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ export function tokenGetter() {
     TabsModule,
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

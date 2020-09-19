@@ -1,8 +1,8 @@
 using System;
 
-namespace MyApp.API.Models
+namespace MyApp.API.DTOs
 {
-    public class Photo
+    public class PhotoForReturnDto
     {
         public int ID { get; set; }
 
@@ -14,10 +14,6 @@ namespace MyApp.API.Models
 
         public bool isMain { get; set; }
 
-        public string PublicId {get; set;}
-
-        public User User { get; set; }
-
-        public int UserId { get; set; }
+        public string PublicId { get; set; }
     }
 }

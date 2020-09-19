@@ -19,13 +19,13 @@ export const appRoutes: Routes = [
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-            { path: 'friends', component: FriendsListComponent, canActivate: [AuthGuard], 
+            { path: 'friends', component: FriendsListComponent, 
              resolve: { users: FriendListResolver } },
-            { path: 'friends/:id', component: FriendDetailedComponent, canActivate: [AuthGuard],
+            { path: 'friends/:id', component: FriendDetailedComponent,
              resolve: { user: FriendDetailedResolver } },
             { path: 'home/edit', component: MemberEditComponent,
              resolve: { user: MemberEditResolver }, canDeactivate: [PreventUnsavedChanges] },
-            { path: 'favorites', component: FavoritesComponent },
+            { path: 'favorites', component: FavoritesComponent } ,
             { path: 'chat', component: ChatComponent },
 
         ]

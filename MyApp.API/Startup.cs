@@ -42,6 +42,7 @@ namespace MyApp.API
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("Cloudinary Settings"));
             services.AddAutoMapper(typeof(BasketballRepository));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IBasketballRepository, BasketballRepository>();
