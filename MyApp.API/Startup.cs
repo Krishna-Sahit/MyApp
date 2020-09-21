@@ -46,6 +46,7 @@ namespace MyApp.API
             services.AddAutoMapper(typeof(BasketballRepository));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IBasketballRepository, BasketballRepository>();
+            services.AddScoped<loguseractivity>();
               services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters{

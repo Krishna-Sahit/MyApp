@@ -7,7 +7,7 @@
       <div class="card">
         <img
           class="card-img-top img-thumbnail"
-          src="{{ user?.photoUrl }}"
+          src="{{ user?.photoUrl || '../../../assets/user.png'}}"
           alt="{{ user?.knownAs }}"
         />
         <div class="card-body">
@@ -24,11 +24,11 @@
         </div>
         <div class="card-body">
           <strong> Last Active: </strong>
-          <p>{{ user?.lastActive }}</p>
+          <p>{{ user?.lastActive | timeago }}</p>
         </div>
         <div class="card-body">
           <strong> User since: </strong>
-          <p>{{ user?.created }}</p>
+          <p>{{ user?.created | date: 'mediumDate' }}</p>
         </div>
       </div>
       <div class="btn-group d-flex">

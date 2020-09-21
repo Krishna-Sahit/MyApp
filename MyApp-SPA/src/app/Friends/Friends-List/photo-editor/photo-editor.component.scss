@@ -3,6 +3,14 @@ img.img-thumbnail {
     min-width: 100px !important;
     margin-bottom: 2px;
 }
-progress{
+.progress{
     color: aqua;
+}
+
+.nv-file-over{
+    border: dotted 3px red;
+}
+
+input[type=file]{
+    color: transparent;
 }

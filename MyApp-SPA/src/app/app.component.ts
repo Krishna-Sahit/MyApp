@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from './_models/User';
 import { AuthService } from './_services/auth.service';
 
 @Component({
@@ -15,8 +16,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     const token = localStorage.getItem('token');
-    if(token){
+    const user: User = JSON.parse(localStorage.getItem('user'));
+    if (token){
       this.authservice.decodedtoken = this.jwthelper.decodeToken(token);
+    }
+    if(user){
+      this.authservice.currentuser = user;
+      this.authservice.ChangeMemberPhoto(user.photoUrl);
     }
   }
 
