@@ -27,6 +27,8 @@ namespace MyApp.API.helpers
             CreateMap<Photo, PhotoForReturnDto>();
             CreateMap<PhotoForCreationDto, Photo>();
             CreateMap<UserForRegisterDto, User>();
+            CreateMap<MessageForCreationDto, Message>();
+            CreateMap<Message, MessageForCreationDto>();
         }
     }
 }

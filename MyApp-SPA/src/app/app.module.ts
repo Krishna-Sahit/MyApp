@@ -16,6 +16,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { FriendsListComponent } from './Friends/Friends-List/Friends-List.component';
 import { ChatComponent } from './Chat/Chat.component';
 import { FavoritesComponent } from './favorites/favorites.component';
@@ -31,6 +32,7 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsavedchanges.guard';
 import { PhotoEditorComponent } from './Friends/Friends-List/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
+import { FavoritesResolver } from './_resolver/favorites-resolver';
 
 
 // tslint:disable-next-line: typedef
@@ -64,6 +66,7 @@ export function tokenGetter() {
     BsDatepickerModule.forRoot(),
     TabsModule,
     PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TimeagoModule.forRoot(),
     NgxGalleryModule,
@@ -82,6 +85,7 @@ export function tokenGetter() {
     FriendDetailedResolver,
     FriendListResolver,
     MemberEditResolver,
+    FavoritesResolver,
     PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]

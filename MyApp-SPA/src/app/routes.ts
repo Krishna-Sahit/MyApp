@@ -8,6 +8,7 @@ import { MemberEditComponent } from './Friends/Friends-List/Member-edit/Member-e
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChanges } from './_guards/prevent-unsavedchanges.guard';
+import { FavoritesResolver } from './_resolver/favorites-resolver';
 import { FriendDetailedResolver } from './_resolver/friend-detail-resolver';
 import { FriendListResolver } from './_resolver/friends-list-resolver';
 import { MemberEditResolver } from './_resolver/member-edit-resolver';
@@ -25,7 +26,8 @@ export const appRoutes: Routes = [
              resolve: { user: FriendDetailedResolver } },
             { path: 'home/edit', component: MemberEditComponent,
              resolve: { user: MemberEditResolver }, canDeactivate: [PreventUnsavedChanges] },
-            { path: 'favorites', component: FavoritesComponent } ,
+            { path: 'favorites', component: FavoritesComponent,
+             resolve: {users: FavoritesResolver} } ,
             { path: 'chat', component: ChatComponent },
 
         ]

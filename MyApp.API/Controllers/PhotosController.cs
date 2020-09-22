@@ -94,7 +94,7 @@ namespace MyApp.API.Controllers
             {
 
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
-                return CreatedAtRoute("GetPhoto", new { userId = userId, id = photo.ID }, photoToReturn);
+                return CreatedAtRoute("GetPhoto", new { userId, id = photo.ID }, photoToReturn);
 
             }
 
