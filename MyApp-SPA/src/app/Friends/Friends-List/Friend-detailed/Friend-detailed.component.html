@@ -33,13 +33,13 @@
       </div>
       <div class="btn-group d-flex">
         <button class="btn btn-primary w-100">Like</button>
-        <button class="btn btn-success w-100">Chat</button>
+        <button class="btn btn-success w-100" (click) = "selectTab(2)">Chat</button>
       </div>
     </div>
 
     <div class="col sm-8">
       <div class="tab-panel">
-        <tabset class="member-tabset">
+        <tabset class="member-tabset" #memberTabs>
           <tab heading="About {{ user?.knownAs }}">
             <h4>Description</h4>
             <p>{{ user?.introduction }}</p>
@@ -57,7 +57,7 @@
             </ngx-gallery>
           </tab>
           <tab heading="Chat">
-            <p>Chat!</p>
+            <app-Friends-Chat [recipientId] ="user.id"></app-Friends-Chat>
           </tab>
         </tabset>
       </div>

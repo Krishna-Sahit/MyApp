@@ -33,6 +33,8 @@ import { PhotoEditorComponent } from './Friends/Friends-List/photo-editor/photo-
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
 import { FavoritesResolver } from './_resolver/favorites-resolver';
+import { MessagesResolver } from './_resolver/messages-resolver';
+import { FriendsChatComponent } from './Friends/Friends-List/Friends-Chat/Friends-Chat.component';
 
 
 // tslint:disable-next-line: typedef
@@ -55,6 +57,7 @@ export function tokenGetter() {
     FriendDetailedComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    FriendsChatComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ export function tokenGetter() {
     FriendListResolver,
     MemberEditResolver,
     FavoritesResolver,
+    MessagesResolver,
     PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]

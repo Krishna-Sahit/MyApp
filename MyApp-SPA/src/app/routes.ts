@@ -12,6 +12,7 @@ import { FavoritesResolver } from './_resolver/favorites-resolver';
 import { FriendDetailedResolver } from './_resolver/friend-detail-resolver';
 import { FriendListResolver } from './_resolver/friends-list-resolver';
 import { MemberEditResolver } from './_resolver/member-edit-resolver';
+import { MessagesResolver } from './_resolver/messages-resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,7 +29,8 @@ export const appRoutes: Routes = [
              resolve: { user: MemberEditResolver }, canDeactivate: [PreventUnsavedChanges] },
             { path: 'favorites', component: FavoritesComponent,
              resolve: {users: FavoritesResolver} } ,
-            { path: 'chat', component: ChatComponent },
+            { path: 'messages', component: ChatComponent,
+             resolve: { messages: MessagesResolver } },
 
         ]
     },
